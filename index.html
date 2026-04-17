@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistema Operacional - Institucional</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-gray-100 font-sans leading-normal tracking-normal">
+
+    <div id="loader" class="fixed inset-0 z-50 flex items-center justify-center bg-[#2d3319]">
+        <div class="animate-spin rounded-full h-16 w-16 border-t-4 border-white"></div>
+    </div>
+
+    <div class="flex flex-col md:flex-row">
+        <nav id="sidebar" class="bg-[#2d3319] text-white w-full md:w-64 min-h-screen">
+            <div class="p-5 text-center border-b border-olive-700">
+                <h1 class="text-xl font-bold uppercase tracking-widest">Operação Policial</h1>
+                <p class="text-xs text-gray-400">PMMG - Estado Maior</p>
+            </div>
+            <ul class="mt-4">
+                <li><a href="#" onclick="showSection('home')" class="block py-3 px-6 hover:bg-[#3e4625] transition"><i class="fas fa-home mr-3"></i> Dashboard</a></li>
+                <li><a href="#" onclick="showSection('mapa')" class="block py-3 px-6 hover:bg-[#3e4625] transition"><i class="fas fa-map-marked-alt mr-3"></i> Módulo Operacional</a></li>
+                <li><a href="#" onclick="showSection('docs')" class="block py-3 px-6 hover:bg-[#3e4625] transition"><i class="fas fa-file-alt mr-3"></i> Documentos</a></li>
+                <li><a href="#" onclick="showSection('staff')" class="block py-3 px-6 hover:bg-[#3e4625] transition"><i class="fas fa-users-cog mr-3"></i> Estado-Maior</a></li>
+                <li><a href="#" onclick="showSection('produtividade')" class="block py-3 px-6 hover:bg-[#3e4625] transition"><i class="fas fa-chart-line mr-3"></i> Produtividade</a></li>
+            </ul>
+        </nav>
+
+        <main class="flex-1 p-6 md:p-10">
+            <section id="home" class="content-section">
+                <div class="hero-bg rounded-xl shadow-2xl p-10 text-white flex flex-col justify-center items-center text-center">
+                    <h2 class="text-4xl font-black mb-4 uppercase">Operação Maio Integrado</h2>
+                    <div id="countdown" class="text-2xl font-mono bg-black/50 p-4 rounded-lg mb-6">00d 00h 00m 00s</div>
+                    <div id="status-badge" class="px-6 py-2 rounded-full font-bold uppercase tracking-wider">Verificando Status...</div>
+                </div>
+            </section>
+
+            <section id="mapa" class="content-section hidden">
+                <h2 class="text-2xl font-bold mb-4 text-[#2d3319]">Mapa Operacional</h2>
+                <div class="bg-white p-4 rounded shadow h-[500px]">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3750.0000000000!2d-43.9!3d-19.9!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTnCsDU0JzAwLjAiUyA0M8KwNTQnMDAuMCJX!5e0!3m2!1spt-BR!2sbr!4v1620000000000!5m2!1spt-BR!2sbr" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                </div>
+            </section>
+
+            <section id="produtividade" class="content-section hidden">
+                <h2 class="text-2xl font-bold mb-4 text-[#2d3319]">Indicadores de Produtividade</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div class="bg-white p-6 rounded shadow">
+                        <canvas id="chartProdutividade"></canvas>
+                    </div>
+                    <div class="bg-white p-6 rounded shadow flex flex-col justify-center items-center">
+                        <span class="text-gray-500 uppercase font-bold text-sm">Total de Registros</span>
+                        <span id="total-registros" class="text-6xl font-black text-olive-800">0</span>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
