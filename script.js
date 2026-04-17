@@ -26,11 +26,14 @@ async function carregarDadosPlanilha() {
     }
 }
 // 3. Controle de Navegação (SPA)
-function showSection(sectionId) {
-    document.querySelectorAll('.content-section').forEach(section => {
-        section.classList.add('hidden');
-    });
-    document.getElementById(sectionId).classList.remove('hidden');
+function showSection(id) {
+    // Esconde todas
+    document.querySelectorAll('.content-section').forEach(s => s.classList.add('hidden'));
+    // Mostra a selecionada
+    document.getElementById(id).classList.remove('hidden');
+    
+    // Rola para o topo suavemente ao trocar de aba
+    document.getElementById('main-content').scrollTo({ top: 0, behavior: 'smooth' });
 }
 
 // 3.1. Contador Regressivo e Status
