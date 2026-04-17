@@ -1,5 +1,5 @@
 // Configurações da Operação
-const DATA_LIMITE = new Date("May 08, 2026 08:00:00").getTime();
+const DATA_LIMITE = new Date("May 08, 2026 03:30:00").getTime();
 
 // 1. Controle de Navegação (SPA)
 function showSection(sectionId) {
