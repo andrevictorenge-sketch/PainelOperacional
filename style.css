@@ -22,14 +22,19 @@
 
 
 .hero-bg {
-    position: absolute;
-    inset: 0;
-    /* Tente usar o caminho relativo com ./ para garantir */
-    background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), 
+    position: relative;
+    width: 100%;
+    min-height: 100vh; /* Ocupa a tela inteira */
+    /* Substitua 'fundo.jpg' pelo seu arquivo na pasta Imagens */
+    background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), 
                 url('Imagens/Apresentação Operação Elos de Minas.pptx (2).png'); 
     background-size: cover;
     background-position: center;
-    z-index: -1; /* Joga a imagem para trás do texto */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
 }
 
 .content-section {
