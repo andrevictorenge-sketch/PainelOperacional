@@ -1,13 +1,28 @@
 /* Cores Customizadas PMMG */
 :root {
-    --pmmg-olive: #2d3319;
-    --pmmg-khaki: #c2b280;
-    --pmmg-beige: #f5f5dc;
+  /* CORES PRINCIPAIS */
+  --pmmg-caqui-medio: #9b8a5c;
+  --pmmg-preto: #000000;
+
+  /* CORES AUXILIARES */
+  --pmmg-amarelo: #d4af37; /* sugestão institucional próxima ao dourado militar */
+  --pmmg-branco: #efe3bd;
+  --pmmg-vermelho: #bb2429;
+
+  /* VARIAÇÕES CAQUI (hierarquia visual) */
+  --pmmg-caqui-claro: #d0c19e;
+  --pmmg-caqui-medio: #9f8e5f;
+  --pmmg-caqui-escuro: #8e8161;
+
+  /* APOIO / FUNDO */
+  --pmmg-fundo: #efe3bd;
+  --pmmg-texto: #000000;
+  --pmmg-destaque: #bb2429;
 }
 
 .hero-bg {
     /* Link da Imagem do Google Drive (Necessário link direto de visualização) */
-    background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1555679427-1f6dfcce943b?auto=format&fit=crop&q=80&w=1600');
+    background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://drive.google.com/uc?export=view&id=1SpmexnmN7biKjiJgX2KAJwfm6HMnyVSe');
     background-size: cover;
     background-position: center;
     min-height: 400px;
