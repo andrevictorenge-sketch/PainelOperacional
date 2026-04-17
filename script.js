@@ -1,7 +1,31 @@
-// Configurações da Operação
-const DATA_LIMITE = new Date("May 08, 2026 03:30:00").getTime();
+// 1. Configurações
+const DATA_LIMITE = new Date("May 08, 2026 08:00:00").getTime();
+// COLE AQUI O LINK QUE GEROU NO PASSO 1 (TERMINADO EM output=csv)
+const LINK_PLANILHA_CSV = "https://docs.google.com/spreadsheets/d/e/2PACX-1vS...SuaChave.../pub?output=csv";
 
-// 1. Controle de Navegação (SPA)
+// 2. Função para Carregar Dados da Planilha
+async function carregarDadosPlanilha() {
+    try {
+        const resposta = await fetch(LINK_PLANILHA_CSV);
+        const dadosRaw = await resposta.text();
+        
+        // Divide o CSV em linhas e colunas
+        const linhas = dadosRaw.split('\n');
+        
+        // Supondo que na sua planilha:
+        // Linha 2, Coluna A (Índice [1] e [0]) seja o Total de Registros
+        const dadosLinha2 = linhas[1].split(',');
+        const totalRegistros = dadosLinha2[0]; 
+
+        // Atualiza o HTML
+        document.getElementById('total-registros').innerText = totalRegistros;
+        
+        console.log("Dados carregados com sucesso!");
+    } catch (erro) {
+        console.error("Erro ao carregar planilha:", erro);
+    }
+}
+// 3. Controle de Navegação (SPA)
 function showSection(sectionId) {
     document.querySelectorAll('.content-section').forEach(section => {
         section.classList.add('hidden');
@@ -9,7 +33,7 @@ function showSection(sectionId) {
     document.getElementById(sectionId).classList.remove('hidden');
 }
 
-// 2. Contador Regressivo e Status
+// 3.1. Contador Regressivo e Status
 function updateCountdown() {
     const agora = new Date().getTime();
     const distancia = DATA_LIMITE - agora;
@@ -32,7 +56,7 @@ function updateCountdown() {
     statusBadge.className = "px-6 py-2 rounded-full font-bold uppercase tracking-wider bg-yellow-500 text-black";
 }
 
-// 3. Simulação de Dados do Google Sheets e Gráfico
+// 3.2 Simulação de Dados do Google Sheets e Gráfico
 function initChart() {
     const ctx = document.getElementById('chartProdutividade').getContext('2d');
     new Chart(ctx, {
@@ -49,11 +73,13 @@ function initChart() {
     document.getElementById('total-registros').innerText = "39";
 }
 
-// Inicialização
+// 4. INICIALIZAÇÃO (Aqui é onde o código "acorda")
 window.onload = () => {
     setInterval(updateCountdown, 1000);
-    initChart();
-    // Esconder loader após carregar
+    
+    // CHAMADA DA PLANILHA:
+    carregarDadosPlanilha(); 
+    
     setTimeout(() => {
         document.getElementById('loader').style.display = 'none';
     }, 1000);
