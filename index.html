@@ -18,8 +18,8 @@
     <div class="flex flex-col md:flex-row">
         <nav id="sidebar" class="bg-[#2d3319] text-white w-full md:w-64 min-h-screen">
             <div class="p-5 text-center border-b border-olive-700">
-                <h1 class="text-xl font-bold uppercase tracking-widest">Operação Policial</h1>
-                <p class="text-xs text-gray-400">PMMG - Estado Maior</p>
+                <h1 class="text-xl font-bold uppercase tracking-widest">Operação Elos de Minas:</h1>
+                <p class="text-xs text-gray-400">Sargento Rodrigo</p>
             </div>
             <ul class="mt-4">
                 <li><a href="#" onclick="showSection('home')" class="block py-3 px-6 hover:bg-[#3e4625] transition"><i class="fas fa-home mr-3"></i> Início</a></li>
@@ -35,7 +35,7 @@
             <!-- INCIO -->
             <section id="home" class="content-section">
                 <div class="hero-bg rounded-xl shadow-2xl p-10 text-white flex flex-col justify-center items-center text-center">
-                    <h2 class="text-4xl font-black mb-4 uppercase">Operação Maio Integrado</h2>
+                    <h2 class="text-4xl font-black mb-4 uppercase">08 de maio de 2026 • EFAS/PM</h2>
                     <div id="countdown" class="text-2xl font-mono bg-black/50 p-4 rounded-lg mb-6">00d 00h 00m 00s</div>
                     <div id="status-badge" class="px-6 py-2 rounded-full font-bold uppercase tracking-wider z-10">Verificando Status...</div>
                 </div>
@@ -49,6 +49,37 @@
                 </div>
             </section>
 
+            
+            <!-- docs -->
+            <section id="docs" class="content-section hidden">
+                <div class="text-center mb-8">
+                    <h2 class="text-3xl font-bold text-[#2d3319] uppercase tracking-widest">Documentos da Operação</h2>
+                    <p class="text-gray-600 text-sm">Ordens de Serviço, Apresentações e Outros</p>
+                    <div class="h-1 w-20 bg-[#c2b280] mx-auto mt-2"></div>
+                </div>
+            
+                <div id="doc-menu" class="flex flex-wrap gap-3 mb-8 bg-[#2d3319] p-3 rounded-2xl border border-[#c2b280] shadow-lg">
+                    <button onclick="carregarDoc('https://docs.google.com/document/d/10MongaKX8Ogrr5vicPDC6WKw47TXjmwn3A5jdtkI9ts/preview')" 
+                            class="doc-btn px-5 py-3 rounded-xl text-xs font-bold uppercase transition-all bg-[#c2b280] text-[#2d3319] hover:scale-105 flex-grow sm:flex-grow-0">
+                        Ordem de Serviço 01
+                    </button>
+                    <button onclick="carregarDoc('https://docs.google.com/document/d/10MongaKX8Ogrr5vicPDC6WKw47TXjmwn3A5jdtkI9ts/preview')" 
+                            class="doc-btn px-5 py-3 rounded-xl text-xs font-bold uppercase transition-all border border-[#c2b280] text-white hover:bg-[#3e4625] flex-grow sm:flex-grow-0">
+                        Plano de Operação
+                    </button>
+                </div>
+            
+                <div id="doc-container" class="bg-white p-2 rounded-2xl shadow-2xl h-[800px] border-2 border-[#2d3319] relative">
+                    <iframe id="doc-iframe" 
+                            src="SOBRE_A_OPERACAO.html" 
+                            width="100%" 
+                            height="100%" 
+                            class="rounded-xl border-0" 
+                            allowfullscreen></iframe>
+                </div>
+            </section>
+
+            
             <!-- EM -->
             <section id="staff" class="content-section hidden">
                 <div class="text-center mb-8">
