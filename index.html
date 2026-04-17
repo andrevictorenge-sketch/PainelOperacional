@@ -22,15 +22,17 @@
                 <p class="text-xs text-gray-400">PMMG - Estado Maior</p>
             </div>
             <ul class="mt-4">
-                <li><a href="#" onclick="showSection('home')" class="block py-3 px-6 hover:bg-[#3e4625] transition"><i class="fas fa-home mr-3"></i> Dashboard</a></li>
-                <li><a href="#" onclick="showSection('mapa')" class="block py-3 px-6 hover:bg-[#3e4625] transition"><i class="fas fa-map-marked-alt mr-3"></i> Módulo Operacional</a></li>
+                <li><a href="#" onclick="showSection('home')" class="block py-3 px-6 hover:bg-[#3e4625] transition"><i class="fas fa-home mr-3"></i> Início</a></li>
+                <li><a href="#" onclick="showSection('mapa')" class="block py-3 px-6 hover:bg-[#3e4625] transition"><i class="fas fa-map-marked-alt mr-3"></i> Mapas Setoriais</a></li>
                 <li><a href="#" onclick="showSection('docs')" class="block py-3 px-6 hover:bg-[#3e4625] transition"><i class="fas fa-file-alt mr-3"></i> Documentos</a></li>
-                <li><a href="#" onclick="showSection('staff')" class="block py-3 px-6 hover:bg-[#3e4625] transition"><i class="fas fa-users-cog mr-3"></i> Estado-Maior</a></li>
+                <li><a href="#" onclick="showSection('EM')" class="block py-3 px-6 hover:bg-[#3e4625] transition"><i class="fas fa-users-cog mr-3"></i> Estado-Maior</a></li>
+                <li><a href="#" onclick="showSection('comunic')" class="block py-3 px-6 hover:bg-[#3e4625] transition"><i class="fas fa-users-cog mr-3"></i> Comunicação Organizacional</a></li>
                 <li><a href="#" onclick="showSection('produtividade')" class="block py-3 px-6 hover:bg-[#3e4625] transition"><i class="fas fa-chart-line mr-3"></i> Produtividade</a></li>
             </ul>
         </nav>
 
         <main class="flex-1 p-6 md:p-10">
+            <!-- INCIO -->
             <section id="home" class="content-section">
                 <div class="hero-bg rounded-xl shadow-2xl p-10 text-white flex flex-col justify-center items-center text-center">
                     <h2 class="text-4xl font-black mb-4 uppercase">Operação Maio Integrado</h2>
@@ -39,6 +41,7 @@
                 </div>
             </section>
 
+            <!-- MAPA -->
             <section id="mapa" class="content-section hidden">
                 <h2 class="text-2xl font-bold mb-4 text-[#2d3319]">Mapa Operacional</h2>
                 <div class="bg-white p-4 rounded shadow h-[500px]">
@@ -46,7 +49,58 @@
                 </div>
             </section>
 
+            <!-- EM -->
+            <section id="mapa" class="content-section hidden">
+                <h2 class="text-2xl font-bold mb-4 text-[#2d3319]">Estado-Maior da Operação</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div class="bg-white p-4 rounded-xl shadow-lg border-t-4 border-[#2d3319]">
+                        <img src="https://drive.google.com/uc?export=view&id=11l7U2x2MVZfDhT8dhBH6mp60tn3_bUHQ" 
+                             alt="Estado-Maior " 
+                             class="w-full h-64 object-cover rounded-lg cursor-pointer hover:opacity-90 transition"
+                             onclick="abrirFullscreen(this.src)">
+                        <div class="mt-4 text-center">
+                            <h3 class="font-bold text-xl uppercase">Estado-Maior </h3>
+                            <p class="text-gray-600">Estado-Maior </p>
+                        </div>
+                    </div>
+            
+                    <div class="bg-white p-4 rounded-xl shadow-lg border-t-4 border-[#2d3319]">
+                        <img src="https://drive.google.com/uc?export=view&id=11l7U2x2MVZfDhT8dhBH6mp60tn3_bUHQ" 
+                             alt="Subcomandante" 
+                             class="w-full h-64 object-cover rounded-lg cursor-pointer hover:opacity-90 transition"
+                             onclick="abrirFullscreen(this.src)">
+                        <div class="mt-4 text-center">
+                            <h3 class="font-bold text-xl uppercase">Maj PM Nome</h3>
+                            <p class="text-gray-600">Subcomandante / Chefe do EM</p>
+                        </div>
+                    </div>
+            
+                </div>
+            
+                <div id="modalFullscreen" 
+                     class="fixed inset-0 z-[100] hidden bg-black/95 flex items-center justify-center p-4 cursor-zoom-out"
+                     onclick="fecharFullscreen()">
+                    <span class="absolute top-5 right-10 text-white text-4xl font-bold cursor-pointer">&times;</span>
+                    <img id="imgFullscreen" src="" class="max-w-full max-h-full shadow-2xl rounded">
+                </div>
+            </section>
+
+            <!-- PRODUTIVIDADE -->
             <section id="produtividade" class="content-section hidden">
+                <h2 class="text-2xl font-bold mb-4 text-[#2d3319]">Indicadores de Produtividade</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div class="bg-white p-6 rounded shadow">
+                        <canvas id="chartProdutividade"></canvas>
+                    </div>
+                    <div class="bg-white p-6 rounded shadow flex flex-col justify-center items-center">
+                        <span class="text-gray-500 uppercase font-bold text-sm">Total de Registros</span>
+                        <span id="total-registros" class="text-6xl font-black text-olive-800">0</span>
+                    </div>
+                </div>
+            </section>
+
+            <!-- COMUNICAÇÃO -->
+            <section id="comunic" class="content-section hidden">
                 <h2 class="text-2xl font-bold mb-4 text-[#2d3319]">Indicadores de Produtividade</h2>
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <div class="bg-white p-6 rounded shadow">
