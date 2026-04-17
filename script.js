@@ -75,18 +75,27 @@ function initChart() {
 
 // Função para abrir a imagem em tela cheia
 function abrirFullscreen(src) {
+    console.log("Tentando ampliar a imagem: " + src); // Mensagem de teste
     const modal = document.getElementById('modalFullscreen');
     const img = document.getElementById('imgFullscreen');
-    img.src = src;
-    modal.classList.remove('hidden');
-    // Bloqueia o scroll da página ao fundo
-    document.body.style.overflow = 'hidden'; 
+    
+    if (modal && img) {
+        img.src = src;
+        modal.classList.remove('hidden');
+        modal.classList.add('flex'); // Garante que fique visível e centralizado
+        document.body.style.overflow = 'hidden'; // Trava a rolagem da página
+    } else {
+        console.error("Erro: O Modal ou a Imagem não foram encontrados no HTML!");
+    }
 }
 
-// Função para fechar a imagem
 function fecharFullscreen() {
-    document.getElementById('modalFullscreen').classList.add('hidden');
-    document.body.style.overflow = 'auto';
+    const modal = document.getElementById('modalFullscreen');
+    if (modal) {
+        modal.classList.add('hidden');
+        modal.classList.remove('flex');
+        document.body.style.overflow = 'auto'; // Devolve a rolagem
+    }
 }
 
 // 4. INICIALIZAÇÃO (Aqui é onde o código "acorda")
