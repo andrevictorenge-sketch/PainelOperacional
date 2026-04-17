@@ -98,6 +98,31 @@ function fecharFullscreen() {
     }
 }
 
+// 4. Carregar documento
+function carregarDoc(link) {
+    const iframe = document.getElementById('doc-iframe');
+    const container = document.getElementById('doc-container');
+    
+    // Adiciona um efeito de carregamento simples
+    iframe.style.opacity = "0.3";
+    
+    // Atualiza o link do iframe
+    // DICA: Para o Drive, use o link que termina em /preview
+    iframe.src = link;
+
+    setTimeout(() => {
+        iframe.style.opacity = "1";
+    }, 500);
+
+    // Feedback visual nos botões
+    document.querySelectorAll('.doc-btn').forEach(btn => {
+        btn.classList.remove('bg-[#c2b280]', 'text-[#2d3319]');
+        btn.classList.add('border', 'text-white');
+    });
+    event.currentTarget.classList.add('bg-[#c2b280]', 'text-[#2d3319]');
+}
+
+
 // 4. INICIALIZAÇÃO (Aqui é onde o código "acorda")
 window.onload = () => {
     setInterval(updateCountdown, 1000);
