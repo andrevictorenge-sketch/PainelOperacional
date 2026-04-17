@@ -9,16 +9,21 @@
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <link rel="stylesheet" href="style.css">
 </head>
-<body class="bg-gray-100 font-sans leading-normal tracking-normal">
+<body class="bg-[#1a1a1a]">
 
-    <div id="app-container">
-        <nav id="sidebar">
-            
-            <div class="p-5 text-center border-b border-olive-700">
+    <header id="top-header">
+        <div class="header-content">
+            <img src="Imagens/logo_pmmg.png" class="header-logo" alt="Logo PMMG">
+            <div class="header-titles">
+
+                
                 <h1 class="text-xl font-bold uppercase tracking-widest">Operação Elos de Minas:</h1>
                 <p class="text-xs text-gray-400">Sargento Rodrigo</p>
             </div>
-            <ul class="mt-4">
+        </div>
+        
+        <nav id="floating-menu">
+            <ul class="nav-list">
                 <li><a href="#" onclick="showSection('home')" class="block py-3 px-6 hover:bg-[#3e4625] transition"><i class="fas fa-home mr-3"></i> Início</a></li>
                 <li><a href="#" onclick="showSection('mapa')" class="block py-3 px-6 hover:bg-[#3e4625] transition"><i class="fas fa-map-marked-alt mr-3"></i> Mapas Setoriais</a></li>
                 <li><a href="#" onclick="showSection('docs')" class="block py-3 px-6 hover:bg-[#3e4625] transition"><i class="fas fa-file-alt mr-3"></i> Documentos</a></li>
@@ -27,8 +32,9 @@
                 <li><a href="#" onclick="showSection('produtividade')" class="block py-3 px-6 hover:bg-[#3e4625] transition"><i class="fas fa-chart-line mr-3"></i> Produtividade</a></li>
             </ul>
         </nav>
+    </header>
 
-        <main id="main-content">
+        <main id="app-main">
             <div class="content-wrapper">
             
             <!-- INCIO -->
