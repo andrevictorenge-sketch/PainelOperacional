@@ -50,38 +50,38 @@
             </section>
 
             <!-- EM -->
-            <section id="mapa" class="content-section hidden">
-                <h2 class="text-2xl font-bold mb-4 text-[#2d3319]">Estado-Maior da Operação</h2>
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                    <div class="bg-white p-4 rounded-xl shadow-lg border-t-4 border-[#2d3319]">
-                        <img src="https://drive.google.com/uc?export=view&id=11l7U2x2MVZfDhT8dhBH6mp60tn3_bUHQ" 
-                             alt="Estado-Maior " 
-                             class="w-full h-64 object-cover rounded-lg cursor-pointer hover:opacity-90 transition"
-                             onclick="abrirFullscreen(this.src)">
-                        <div class="mt-4 text-center">
-                            <h3 class="font-bold text-xl uppercase">Estado-Maior </h3>
-                            <p class="text-gray-600">Estado-Maior </p>
-                        </div>
-                    </div>
-            
-                    <div class="bg-white p-4 rounded-xl shadow-lg border-t-4 border-[#2d3319]">
-                        <img src="https://drive.google.com/uc?export=view&id=11l7U2x2MVZfDhT8dhBH6mp60tn3_bUHQ" 
-                             alt="Subcomandante" 
-                             class="w-full h-64 object-cover rounded-lg cursor-pointer hover:opacity-90 transition"
-                             onclick="abrirFullscreen(this.src)">
-                        <div class="mt-4 text-center">
-                            <h3 class="font-bold text-xl uppercase">Maj PM Nome</h3>
-                            <p class="text-gray-600">Subcomandante / Chefe do EM</p>
-                        </div>
-                    </div>
-            
+            <section id="EM" class="content-section hidden">
+                <div class="text-center mb-8">
+                    <h2 class="text-3xl font-bold text-[#2d3319] uppercase tracking-widest">Estado-Maior</h2>
+                    <div class="h-1 w-20 bg-[#c2b280] mx-auto mt-2"></div>
                 </div>
+                
+                <div class="flex flex-col md:flex-row justify-center items-center gap-8 max-w-6xl mx-auto">
+                    
+                    <div class="w-full md:w-1/2 group">
+                        <div class="relative overflow-hidden rounded-xl shadow-2xl border-4 border-white">
+                            <img src="https://drive.google.com/uc?export=view&id=11l7U2x2MVZfDhT8dhBH6mp60tn3_bUHQ" 
+                                 alt="Estado Maior" 
+                                 class="w-full h-auto cursor-zoom-in transition-transform duration-500 group-hover:scale-105"
+                                 onclick="abrirFullscreen(this.src)">
+                            <div class="absolute bottom-0 left-0 right-0 bg-black/60 text-white p-2 text-center text-sm opacity-0 group-hover:opacity-100 transition-opacity">
+                                Clique para ampliar
+                            </div>
+                        </div>
+                    </div>
             
-                <div id="modalFullscreen" 
-                     class="fixed inset-0 z-[100] hidden bg-black/95 flex items-center justify-center p-4 cursor-zoom-out"
-                     onclick="fecharFullscreen()">
-                    <span class="absolute top-5 right-10 text-white text-4xl font-bold cursor-pointer">&times;</span>
-                    <img id="imgFullscreen" src="" class="max-w-full max-h-full shadow-2xl rounded">
+                    <div class="w-full md:w-1/2 group">
+                        <div class="relative overflow-hidden rounded-xl shadow-2xl border-4 border-white">
+                            <img src="https://drive.google.com/uc?export=view&id=11l7U2x2MVZfDhT8dhBH6mp60tn3_bUHQ" 
+                                 alt="Estado Maior Especial" 
+                                 class="w-full h-auto cursor-zoom-in transition-transform duration-500 group-hover:scale-105"
+                                 onclick="abrirFullscreen(this.src)">
+                            <div class="absolute bottom-0 left-0 right-0 bg-black/60 text-white p-2 text-center text-sm opacity-0 group-hover:opacity-100 transition-opacity">
+                                Clique para ampliar
+                            </div>
+                        </div>
+                    </div>
+            
                 </div>
             </section>
 
