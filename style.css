@@ -21,12 +21,14 @@
 }
 
 .hero-bg {
-    /* Link da Imagem do Google Drive (Necessário link direto de visualização) */
-    background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('Imagens/Apresentação Operação Elos de Minas.pptx (2).png');
+    /* Certifique-se de que o nome do arquivo (ex: fundo.jpg) está idêntico ao GitHub */
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), 
+                url('Imagens/Apresentação Operação Elos de Minas.pptx (2).png'); 
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    min-height: 450px; /* Altura da seção de destaque */
+    width: 100%;
+    min-height: 80vh; /* Isso garante que ela ocupe 80% da altura da tela */
     display: flex;
     flex-direction: column;
     justify-content: center;
