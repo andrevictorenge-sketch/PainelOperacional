@@ -22,10 +22,15 @@
 
 .hero-bg {
     /* Link da Imagem do Google Drive (Necessário link direto de visualização) */
-    background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://drive.google.com/uc?export=view&id=1SpmexnmN7biKjiJgX2KAJwfm6HMnyVSe');
+    background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('Imagens/Apresentação Operação Elos de Minas.pptx (2).png');
     background-size: cover;
     background-position: center;
-    min-height: 400px;
+    background-repeat: no-repeat;
+    min-height: 450px; /* Altura da seção de destaque */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 .content-section {
