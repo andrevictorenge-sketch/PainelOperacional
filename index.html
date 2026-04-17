@@ -115,6 +115,19 @@
         </main> 
     </div>
 
+    <div id="modalFullscreen" 
+         class="fixed inset-0 z-[999] hidden bg-black/95 flex items-center justify-center p-4 cursor-pointer"
+         onclick="fecharFullscreen()"
+         style="display: none;">
+        
+        <span class="absolute top-5 right-10 text-white text-6xl font-bold">&times;</span>
+        
+        <img id="imgFullscreen" 
+             src="" 
+             class="max-w-[95vw] max-h-[95vh] object-contain shadow-2xl"
+             alt="Imagem Ampliada">
+    </div>
+
     <script src="script.js"></script>
 </body>
 </html>
