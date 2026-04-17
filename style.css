@@ -20,22 +20,13 @@
   --pmmg-destaque: #bb2429;
 }
 
-#home {
-    position: relative;
-    width: 100%;
-    min-height: 80vh; /* Ocupa 80% da altura do monitor */
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    overflow: hidden;
-}
 
 .hero-bg {
     position: absolute;
     inset: 0;
     /* Tente usar o caminho relativo com ./ para garantir */
     background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), 
-                url('./imagens/fundo.png'); 
+                url('Imagens/Apresentação Operação Elos de Minas.pptx (2).png'); 
     background-size: cover;
     background-position: center;
     z-index: -1; /* Joga a imagem para trás do texto */
