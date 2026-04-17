@@ -73,6 +73,25 @@ function initChart() {
     document.getElementById('total-registros').innerText = "39";
 }
 
+// Função para abrir a imagem em tela cheia
+function abrirFullscreen(src) {
+    const modal = document.getElementById('modalFullscreen');
+    const img = document.getElementById('imgFullscreen');
+    
+    img.src = src;
+    modal.classList.remove('hidden');
+    // Bloqueia o scroll da página ao fundo
+    document.body.style.overflow = 'hidden'; 
+}
+
+// Função para fechar a imagem
+function fecharFullscreen() {
+    const modal = document.getElementById('modalFullscreen');
+    modal.classList.add('hidden');
+    // Devolve o scroll da página
+    document.body.style.overflow = 'auto';
+}
+
 // 4. INICIALIZAÇÃO (Aqui é onde o código "acorda")
 window.onload = () => {
     setInterval(updateCountdown, 1000);
