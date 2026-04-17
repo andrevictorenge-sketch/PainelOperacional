@@ -20,228 +20,50 @@
   --pmmg-destaque: #bb2429;
 }
 
-/* Reset e Estrutura App */
-* { margin: 0; padding: 0; box-sizing: border-box; }
-
+/* 1. AJUSTE DE ROLAGEM: Altere o 'body' para permitir o scroll natural */
 body, html {
-    height: 100%;
+    height: auto; /* Mude de 100% para auto para o rodapé aparecer no fim */
+    min-height: 100%;
     background-color: #1a1a1a;
     color: white;
     font-family: 'Inter', sans-serif;
-    overflow: hidden; /* O body não rola, quem rola é o main */
-}
-
-#app-container {
-    display: flex;
-    height: 100vh;
-    width: 100vw;
-}
-
-/* Sidebar Adaptável */
-#sidebar {
-    width: 260px;
-    background: #12140d;
-    border-right: 1px solid #2d3319;
-    display: flex;
-    flex-direction: column;
-}
-
-#sidebar ul li a {
-    display: block;
-    padding: 15px 25px;
-    color: #8e8e8e;
-    font-weight: bold;
-    font-size: 14px;
-    transition: 0.3s;
-}
-
-#sidebar ul li a:hover {
-    color: #c2b280;
-    background: #1a1d12;
-}
-
-/* Área Principal Fluida */
-#main-content {
-    flex: 1;
-    overflow-y: auto; /* Rolagem aqui permite o efeito de App */
-    display: flex;
-    flex-direction: column;
-}
-
-.content-wrapper { flex: 1; }
-
-.hero-bg {
-    position: relative;
-    width: 100%;
-    min-height: 100vh; /* Ocupa a tela inteira */
-    /* Substitua 'fundo.jpg' pelo seu arquivo na pasta Imagens */
-    background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), 
-                url('Imagens/Apresentação Operação Elos de Minas.pptx (2).png'); 
-    background-size: cover;
-    background-position: center;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    z-index: 1;
-}
-
-/* Rodapé conforme a Imagem Enviada */
-.footer-pmmg {
-    background-color: #000;
-    padding: 40px 20px;
-    text-align: center;
-    border-top: 1px solid #2d3319;
-}
-
-.footer-line {
-    width: 100%;
-    height: 1px;
-    background: linear-gradient(90deg, transparent, #2d3319, transparent);
-    margin-bottom: 30px;
-}
-
-
-
-/* 2. Personalização dos Números do Contador */
-#countdown {
-    font-family: 'Courier New', Courier, monospace; /* Fonte estilo terminal/militar */
-    font-size: 3rem;
-    font-weight: bold;
-    color: #ffffff;
-    text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
-    letter-spacing: 2px;
-    background: rgba(0, 0, 0, 0.4);
-    padding: 15px 30px;
-    border-radius: 8px;
-    border: 1px solid #c2b280;
-}
-
-/* 3. Status Vermelho e Piscante */
-#status-badge {
-    background-color: #ff0000 !important; /* Força o vermelho */
-    color: white !important;
-    font-size: 1.2rem;
-    padding: 10px 25px;
-    border-radius: 50px;
-    box-shadow: 0 0 15px rgba(255, 0, 0, 0.6);
-    animation: flash 1.5s infinite; /* Ativa o efeito de piscar */
-    cursor: default;
-}
-
-/* Animação de Piscar */
-@keyframes flash {
-    0% { opacity: 1; transform: scale(1); }
-    50% { opacity: 0.5; transform: scale(1.05); }
-    100% { opacity: 1; transform: scale(1); }
-}
-
-.content-section {
-    animation: fadeIn 0.5s ease-in-out;
-}
-
-@keyframes fadeIn {
-    from { opacity: 0; transform: translateY(10px); }
-    to { opacity: 1; transform: translateY(0); }
-}
-
-@keyframes blink { 50% { opacity: 0.5; } }
-
-/* Responsividade Mobile */
-@media (max-width: 768px) {
-    #app-container { flex-direction: column; }
-    #sidebar { width: 100%; height: auto; border-right: none; border-bottom: 1px solid #2d3319; }
-    #sidebar ul { display: flex; overflow-x: auto; }
-    #sidebar ul li a { padding: 10px 15px; white-space: nowrap; font-size: 12px; }
-    #countdown { font-size: 1.5rem; }
-}
-
-
-/* --- AJUSTE DE FLUIDEZ GLOBAL --- */
-body, html {
-    height: 100%;
-    background-color: #1a1a1a;
-    color: white;
-    font-family: 'Inter', sans-serif;
-    overflow-x: hidden; /* Evita scroll horizontal */
-    overflow-y: auto;   /* Permite a rolagem fluida da página inteira */
+    overflow-x: hidden;
+    overflow-y: visible; /* Garante que a rolagem do site funcione */
     scroll-behavior: smooth;
 }
 
-/* Removemos o display flex do container para o conteúdo fluir verticalmente */
-#app-container {
-    display: block; 
-    width: 100%;
-}
-
-/* --- CABEÇALHO SUPERIOR FIXO --- */
-#top-header {
-    position: fixed;
-    top: 0;
-    width: 100%;
-    background: #000;
-    z-index: 1000;
-    border-bottom: 2px solid #2d3319;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-/* --- MENU SUSPENSO (HORIZONTAL) --- */
-#sidebar {
-    width: 100%; /* Agora ocupa a largura toda no topo */
-    background: #12140d;
-    border-right: none;
-    border-top: 1px solid #2d3319;
-}
-
+/* 2. AJUSTE DO MENU: Adicione 'flex-wrap' para o menu não quebrar em telas pequenas */
 #sidebar ul {
-    display: flex; /* Alinha os itens lado a lado */
-    justify-content: center; /* Centraliza o menu */
+    display: flex;
+    justify-content: center;
     list-style: none;
+    flex-wrap: wrap; /* Essencial para celulares */
+    padding: 0;
+    margin: 0;
 }
 
+/* 3. AJUSTE DE LINKS: Melhore o toque no mobile */
 #sidebar ul li a {
     display: flex;
     align-items: center;
     gap: 8px;
-    padding: 15px 20px;
-    font-size: 12px;
+    padding: 12px 15px; /* Reduzi um pouco para caber mais itens */
+    font-size: 11px; /* Tamanho ideal para menu superior */
     text-transform: uppercase;
+    color: #c2b280; /* Cor caqui padrão */
+    text-decoration: none;
     border-bottom: 3px solid transparent;
+    transition: 0.3s;
 }
 
-#sidebar ul li a:hover {
-    background: #1a1d12;
-    border-bottom: 3px solid #c2b280; /* Efeito de destaque no menu */
+/* 4. AJUSTE DO CONTEÚDO: Garanta que o footer seja empurrado para baixo */
+.content-wrapper {
+    flex: 1 0 auto; /* Faz com que o conteúdo "estique" e o footer fique no fim */
 }
 
-/* --- AJUSTE DE ÁREA PRINCIPAL --- */
 #main-content {
-    padding-top: 140px; /* IMPORTANTE: Espaço para o cabeçalho não cobrir o início */
+    padding-top: 130px; /* Ajuste este valor se o seu título for muito alto */
     min-height: 100vh;
     display: flex;
     flex-direction: column;
 }
-
-/* --- SEÇÃO DE DOCUMENTOS FLUIDA --- */
-#doc-container {
-    width: 100%;
-    height: 80vh; /* Altura fixa para o documento rolar internamente */
-    border-radius: 15px;
-    overflow: hidden;
-    border: 2px solid #2d3319;
-    background: #000;
-}
-/* Fullscreen Modal */
-#modalFullscreen {
-    position: fixed;
-    inset: 0;
-    background: rgba(0,0,0,0.95);
-    z-index: 1000;
-    display: none;
-    align-items: center;
-    justify-content: center;
-}
-#modalFullscreen.show { display: flex; }
-#modalFullscreen img { max-width: 95%; max-height: 95%; object-contain: contain; }
