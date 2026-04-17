@@ -77,7 +77,6 @@ function initChart() {
 function abrirFullscreen(src) {
     const modal = document.getElementById('modalFullscreen');
     const img = document.getElementById('imgFullscreen');
-    
     img.src = src;
     modal.classList.remove('hidden');
     // Bloqueia o scroll da página ao fundo
@@ -86,9 +85,7 @@ function abrirFullscreen(src) {
 
 // Função para fechar a imagem
 function fecharFullscreen() {
-    const modal = document.getElementById('modalFullscreen');
-    modal.classList.add('hidden');
-    // Devolve o scroll da página
+    document.getElementById('modalFullscreen').classList.add('hidden');
     document.body.style.overflow = 'auto';
 }
 
